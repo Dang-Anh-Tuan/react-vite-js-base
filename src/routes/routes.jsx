@@ -3,6 +3,7 @@ import Hello from '@components/Hello'
 import Contact from '@components/Contact'
 import ErrorPage from '@pages/error-page'
 import Default from '@layouts/Default'
+import LoginPage from '@pages/login'
 
 
 const router = createBrowserRouter([
@@ -21,7 +22,10 @@ const router = createBrowserRouter([
       },
     ],
     errorElement: <ErrorPage />,
-
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
   }
 ])
 

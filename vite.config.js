@@ -21,6 +21,8 @@ export default defineConfig({
       '@constants': path.resolve(__dirname, './src/constants'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@redux': path.resolve(__dirname, './src/redux'),
+      '@plugin': path.resolve(__dirname, './src/plugin'),
+      '@api': path.resolve(__dirname, './src/api'),
     }
   }
 })

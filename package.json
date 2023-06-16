@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"json-server --watch db.json --port 5500\"",
     "build": "vite build",
     "lint": "eslint --ext js,jsx src/",
     "lint:fix": "eslint --fix --ext js,jsx src/",
@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.4.0",
+    "js-cookie": "^3.0.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -26,6 +28,7 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "concurrently": "^8.2.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
