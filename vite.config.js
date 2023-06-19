@@ -23,6 +23,10 @@ export default defineConfig({
       '@redux': path.resolve(__dirname, './src/redux'),
       '@plugin': path.resolve(__dirname, './src/plugin'),
       '@api': path.resolve(__dirname, './src/api'),
+      '@css': path.resolve(__dirname, './src/assets/css'),
+      '@helper': path.resolve(__dirname, './src/helper'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@middleware': path.resolve(__dirname, './src/middleware'),
     }
   }
 })

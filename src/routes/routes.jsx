@@ -4,12 +4,22 @@ import Contact from '@components/Contact'
 import ErrorPage from '@pages/error-page'
 import Default from '@layouts/Default'
 import LoginPage from '@pages/login'
-
+import Middleware from '@middleware'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Default />,
+    element: (
+      <Middleware listMiddleware={
+        [
+          {
+            name: 'AuthMiddleware',
+            props: { needAuth: true }
+          }
+        ]
+      }>
+        <Default />
+      </Middleware>),
     children: [
       { index: true, element: <h1>Home Page</h1> },
       {
@@ -25,7 +35,16 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <LoginPage />,
+    element:  (<Middleware listMiddleware={
+      [
+        {
+          name: 'AuthMiddleware',
+          props: { needAuth: false }
+        }
+      ]
+    }>
+      <LoginPage />,
+    </Middleware>),
   }
 ])
 

@@ -16,7 +16,7 @@ commonInstance.interceptors.request.use(
   (config) => {
     if (accessToken) {
       Object.assign(config.headers, {
-        Authorization: `${accessToken}`,
+        Authorization: `Bearer ${accessToken}`,
       })
     }
     return config
@@ -35,6 +35,7 @@ commonInstance.interceptors.response.use(
   (error) => {
     if (error.response) {
       // handle error
+      // TODO: logout when 401
     }
     return Promise.reject(error.response.data)
   }
